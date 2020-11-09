@@ -24,6 +24,21 @@ function handleBlinkingStateChanged (event) {
     sendData("blinkingStateChanged", data, evDeviceId, evTimestamp );
 }
 
+// react on the "motionDetected" Event
+function handleMotionDetected (event) {
+    // read variables from the event
+    let eventData = JSON.parse(event.data);
+    let data = eventData.data;
+    let deviceId = eventData.coreid;
+    let timestamp = Date.parse(eventData.published_at);
+
+    // create a message to be sent to a client
+    let message = timestamp + data;
+
+    // send the message to the client (as stream)
+    exports.sse.send(message)
+}
+
 // react on the "buttonStateChanged" Event
 function handleButtonStateChanged (event) {
     // read variables from the event
@@ -93,3 +108,4 @@ exports.sse = null;
 // export your own functions here as well
 exports.handleBlinkingStateChanged = handleBlinkingStateChanged;
 exports.handleButtonStateChanged = handleButtonStateChanged;
+exports.handleMotionDetected = handleMotionDetected;

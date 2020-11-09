@@ -10,6 +10,7 @@ var app = new Vue({
         blinking_0: false,        // true if device 0 is blinking.
         blinking_1: false,        // true if device 0 is blinking.
         // add your own variables here ...
+        counter: 0,
     },
     // This function is executed once when the page is loaded.
     mounted: function () {
@@ -81,6 +82,23 @@ var app = new Vue({
                     }
                     else if (nr === 1) {
                         this.buttonState_1 = buttonState;
+                    }
+                    else {
+                        console.log("unknown device number: " + nr);
+                    }
+                })
+                .catch(error => {
+                    alert("Could not read the button state of device number " + nr + ".\n\n" + error)
+                })
+        }
+        // get the value of the variable "counter"
+        getCounter: function (nr) {
+            axios.get(rootUrl + "/api/device/" + nr + "/variable/counter")
+                .then(response => {
+                    // Handle the response from the server
+                    var counter = response.data.result;
+                    if (nr === 0) {
+                        this.counter = counter;
                     }
                     else {
                         console.log("unknown device number: " + nr);
