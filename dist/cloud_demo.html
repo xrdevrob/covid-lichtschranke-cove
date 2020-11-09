@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Functions and Variables Example</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h4>Events</h4>
+        <!-- Sync example -->
+        <p>Buttons pressed within 1 second: {{ buttonsSync }}</p>
+
+        <!-- Counter example (received as event) -->
+        <p>Button press counter: {{ buttonPressCounter }}</p>
+
+        <!-- Blinking example (received as event) -->
+        <p>Device 0 is blinking: {{ blinking_0 }}</p>
+        <p>Device 1 is blinking: {{ blinking_1 }}</p>
+        
+        <hr>
+        <h4>Variables</h4>
+        <!-- Read variables example -->
+        <p>Button state (0): {{ buttonState_0 }} </p>
+        <button v-on:click="getButtonState(0)">Get button state (Device 0)</button>
+        <br>
+        <p>Button state (1): {{ buttonState_1 }} </p>
+        <button v-on:click="getButtonState(1)">Get button state (Device 1)</button>
+        
+        <hr>
+        <h4>Functions</h4>
+        <!-- Call functions example  -->
+        <p>Blink red</p>
+        <button v-on:click="blinkRed(0)">Blink Red (Device 0)</button>
+        <button v-on:click="blinkRed(1)">Blink Red (Device 1)</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="cloud_demo.js"></script>
+</body>
+
+</html>
