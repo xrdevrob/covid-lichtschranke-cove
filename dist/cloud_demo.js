@@ -90,7 +90,7 @@ var app = new Vue({
                 .catch(error => {
                     alert("Could not read the button state of device number " + nr + ".\n\n" + error)
                 })
-        }
+        },
         // get the value of the variable "counter"
         getCounter: function (nr) {
             axios.get(rootUrl + "/api/device/" + nr + "/variable/counter")
