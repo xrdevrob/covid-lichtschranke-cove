@@ -1,12 +1,12 @@
 .header-dark {
-    background:url('https://cdn.pixabay.com/photo/2015/10/12/14/59/milky-way-984050_960_720.jpg') #444;
+    background:url('https://media.giphy.com/media/KZFrf9JusXzmpnPsT6/giphy.gif') #444;
     background-size:cover;
     padding-bottom:80px;
   }
   
   @media (min-width:768px) {
     .header-dark {
-      padding-bottom:120px;
+      padding-bottom:343px;
     }
   }
   
