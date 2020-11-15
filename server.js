@@ -62,7 +62,6 @@ for (let device of devices) {
     // You don't have to change anything else in this file.
     /////////////////////////////////////////////////////////
     source.addEventListener('buttonStateChanged', eventListeners.handleButtonStateChanged)
-    source.addEventListener('blinkingStateChanged', eventListeners.handleBlinkingStateChanged)
     /////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////
 }
