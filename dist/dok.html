@@ -19,6 +19,7 @@
     />
 
     <link rel="stylesheet" href="dok.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
     <title>Covid-Zugangskonrolle</title>
   </head>
@@ -88,6 +89,9 @@
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                   <a class="nav-link" href="index.html">Startseite</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="dok.html">Dokumentation</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -227,10 +231,19 @@
 
                 <pre>
         <code>
-            myservo.attach(A1);  //attaches the servo on pin A1 to the servo object</code>
+            myservo.attach(A1);  // attaches the servo on pin A1 to the servo object</code>
       </pre>
+                <p>
+                  Die Position des Servos kann direkt mit einer Zahl oder mit
+                  der Variable «position» festgelegt werden.
+                </p>
 
-                <h3>Z-index</h3>
+                <pre>
+<code>
+    myservo.write(position); oder myservo.write(90);</code>
+</pre>
+
+                <h3>OLED-Display (SSD1306 128x64 I2C) – Informationsanzeige</h3>
                 <p>
                   Several Bootstrap components utilize
                   <code class="highlight-rouge">z-index</code>, the CSS property
