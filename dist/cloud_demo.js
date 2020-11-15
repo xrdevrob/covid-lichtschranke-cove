@@ -11,6 +11,7 @@ var app = new Vue({
         blinking_1: false,        // true if device 0 is blinking.
         // add your own variables here ...
         counter: 0,
+        position: 0,
     },
     // This function is executed once when the page is loaded.
     mounted: function () {

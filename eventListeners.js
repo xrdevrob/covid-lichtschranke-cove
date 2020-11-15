@@ -31,10 +31,9 @@ function handleMotionDetected (event) {
     let data = eventData.data;
     let deviceId = eventData.coreid;
     let timestamp = Date.parse(eventData.published_at);
-    let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'-'+today.getHours() + ":" + today.getMinutes();
 
     // create a message to be sent to a client
-    let message = date + ": " + data;
+    let message = timestamp + ": " + data;
 
     // send the message to the client (as stream)
     exports.sse.send(message)

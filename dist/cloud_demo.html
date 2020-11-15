@@ -66,43 +66,38 @@
         </ul>
       </div>
     </nav>
+    <div class="container">
+      <div id="app">
+        <h4>Events</h4>
+        <!-- Sync example -->
+        <p>Buttons pressed within 1 second: {{ buttonsSync }}</p>
 
-    <div id="app">
-      <h4>Events</h4>
-      <!-- Sync example -->
-      <p>Buttons pressed within 1 second: {{ buttonsSync }}</p>
+        <!-- Counter example (received as event) -->
+        <p>Button press counter: {{ buttonPressCounter }}</p>
 
-      <!-- Counter example (received as event) -->
-      <p>Button press counter: {{ buttonPressCounter }}</p>
+        <!-- Blinking example (received as event) -->
+        <p>Device 0 is blinking: {{ blinking_0 }}</p>
+        <p>Device 1 is blinking: {{ blinking_1 }}</p>
 
-      <!-- Blinking example (received as event) -->
-      <p>Device 0 is blinking: {{ blinking_0 }}</p>
-      <p>Device 1 is blinking: {{ blinking_1 }}</p>
+        <hr />
+        <h4>Variables</h4>
+        <!-- Read variables example -->
+        <p>Der Raum ist derzeit {{ position }}</p>
+        <button v-on:click="getButtonState(0)">
+          Status des Zugangs abfragen
+        </button>
+        <br />
+        <p>Anzahl Benutzer aktuell im Raum: {{ counter }}</p>
+        <button v-on:click="getCounter(0)">Anzahl abrufen</button>
 
-      <hr />
-      <h4>Variables</h4>
-      <!-- Read variables example -->
-      <p>Button state (0): {{ buttonState_0 }}</p>
-      <button v-on:click="getButtonState(0)">
-        Get button state (Device 0)
-      </button>
-      <br />
-      <p>Button state (1): {{ buttonState_1 }}</p>
-      <button v-on:click="getButtonState(1)">
-        Get button state (Device 1)
-      </button>
-      <br />
-      <p>Anzahl Benutzer aktuell im Raum: {{ counter }}</p>
-      <button v-on:click="getCounter(0)">Anzahl abrufen</button>
-
-      <hr />
-      <h4>Functions</h4>
-      <!-- Call functions example  -->
-      <p>Blink red</p>
-      <button v-on:click="blinkRed(0)">Blink Red (Device 0)</button>
-      <button v-on:click="blinkRed(1)">Blink Red (Device 1)</button>
+        <hr />
+        <h4>Functions</h4>
+        <!-- Call functions example  -->
+        <p>Blink red</p>
+        <button v-on:click="blinkRed(0)">Blink Red (Device 0)</button>
+        <button v-on:click="blinkRed(1)">Blink Red (Device 1)</button>
+      </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="cloud_demo.js"></script>
