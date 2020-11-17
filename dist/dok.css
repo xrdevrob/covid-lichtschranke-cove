@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
+@import url("https://fonts.googleapis.com/css?family=Pontano+Sans");
 
-html, body {
-  font-family: 'Pontano Sans', sans-serif;
+html,
+body {
+  font-family: "Pontano Sans", sans-serif;
   font-size: 18px;
   background-color: #fff;
   color: #000;
@@ -20,7 +21,7 @@ html, body {
 
 .nav header {
   display: block;
-  text-align:center;
+  text-align: center;
   margin: 0 10px;
   padding: 5px;
   border-bottom: 1px solid #30336b;
@@ -98,7 +99,6 @@ pre {
   font-size: 80%;
   width: 90%;
   white-space: pre-line;
-
 }
 
 /*-------FOOTER------*/
@@ -153,6 +153,11 @@ footer p {
   }
 }
 .navbar {
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.breadcrumb {
   margin-top: 10px;
   border-radius: 20px;
 }

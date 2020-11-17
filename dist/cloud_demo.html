@@ -58,14 +58,21 @@
               Demos
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/cloud_demo.html"
-                >Particle Demos (Events, Funktionen, Variablen)</a
-              >
+              <a class="dropdown-item" href="/cloud_demo.html">Particle Demo</a>
               <a class="dropdown-item" href="/events.html">Events</a>
             </div>
           </li>
         </ul>
       </div>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/index.html">Startseite</a></li>
+        <li class="breadcrumb-item"><a href="#">Demos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Particle Demo
+        </li>
+      </ol>
     </nav>
     <div class="container-fluid">
       <div id="app">
@@ -125,15 +132,15 @@
           <div class="col-sm-6">
             <div class="card border-dark">
               <div class="card-body text-dark">
-                <h5 class="card-title">Raum Besetzung</h5>
-                <p class="card-text">Raum besetzt: {{ buttonsSync }}</p>
+                <h5 class="card-title">Sehen Sie sofort, ob der Raum besetzt ist:</h5>
+                <p class="card-text">Raum besetzt: {{ besetzt }}</p>
               </div>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="card border-dark">
               <div class="card-body text-dark">
-                <h5 class="card-title">Demo aktiv</h5>
+                <h5 class="card-title">Sehen Sie sofort, ob eine Demo im Gange ist:</h5>
                 <p class="card-text">Demo aktiv: {{ reservation }}</p>
               </div>
             </div>
@@ -141,7 +148,15 @@
         </div>
       </div>
       <div class="container-fluid">
-        <canvas id="myChart"></canvas>
+        <div class="row">
+          <div class="col">
+            <h3>Liniendiagramm der Raumnutzung</h3>
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="col">
+            <h3>Auswertung der Raumnnutzung</h3>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
