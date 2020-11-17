@@ -61,7 +61,6 @@ for (let device of devices) {
     source.addEventListener('reservationChanged', eventListeners.handlereservationChanged)
     // You don't have to change anything else in this file.
     /////////////////////////////////////////////////////////
-    source.addEventListener('buttonStateChanged', eventListeners.handleButtonStateChanged)
     /////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////
 }
