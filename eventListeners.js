@@ -11,13 +11,13 @@ var buttonPressCounter = 0;
 function handleReservationChanged (event) {
     // read variables from the event
     let ev = JSON.parse(event.data);
-    let evData = ev.data; // the data from the argon event: "started blinking" or "stopped blinking"
+    let evData = ev.data; // the data from the argon event: "Demo aktiv" or "Demo abgeschlossen"
     let evDeviceId = ev.coreid; // the device id
     let evTimestamp = Date.parse(ev.published_at); // the timestamp of the event
 
     // the data we want to send to the clients
     let data = {
-        message: evData, // just forward "started blinking" or "stopped blinking"
+        message: evData, // just forward "Demo aktiv" or "Demo abgeschlossen"
     }
 
     // send data to all connected clients
