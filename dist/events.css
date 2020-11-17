@@ -1,0 +1,10 @@
+.container-fluid {
+    padding: 20px;
+ }
+
+ .navbar {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+  }

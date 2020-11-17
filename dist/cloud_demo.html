@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Bitter:400,700"
     />
+    <link rel="stylesheet" href="cloud_demo.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <title>Cloud Functions and Variables Example</title>
@@ -66,8 +67,56 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
+
+    <div class="container-fluid">
       <div id="app">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Verfügbarkeit abfragen:</h5>
+                <p class="card-text">{{ position }}</p>
+                <button
+                  href="#"
+                  class="btn btn-primary"
+                  v-on:click="getPosition(0)"
+                >
+                  Jetzt abfragen
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Anzahl Benutzer abfragen:</h5>
+                <p class="card-text">
+                  Anzahl Benutzer aktuell im Raum: {{ counter }}
+                </p>
+                <button
+                  href="#"
+                  class="btn btn-primary"
+                  v-on:click="getCounter(0)"
+                >
+                  Anzahl abrufen
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <h4>Events</h4>
         <!-- Room limit reached -->
         <p>Raum besetzt: {{ buttonsSync }}</p>
@@ -75,26 +124,14 @@
         <!-- Demo (Reservation) -->
         <p>Demo aktiv: {{ reservation }}</p>
 
-        <hr />
-        <h4>Variablen</h4>
-        <!-- Read variables example -->
-        <p>Der Raum ist derzeit {{ position }}</p>
-        <button v-on:click="getPosition(0)">Status des Zugangs abfragen</button>
-        <br />
-        <p>Anzahl Benutzer aktuell im Raum: {{ counter }}</p>
-        <button v-on:click="getCounter(0)">Anzahl abrufen</button>
-
-        <hr />
         <h4>Funktionen</h4>
         <!-- Call functions example  -->
         <p>Raum reservieren</p>
         <button v-on:click="raumReservieren(0)">Raum reservieren</button>
       </div>
     </div>
-    <div class="container">
-      <div class="box">
-        <canvas id="myChart"></canvas>
-      </div>
+    <div class="container-fluid">
+      <canvas id="myChart"></canvas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

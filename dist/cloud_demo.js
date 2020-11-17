@@ -117,10 +117,10 @@ var app = new Vue({
           var position = response.data.result;
           if (position == 90) {
             position =
-              "geöffnet! Bitte treten Sie ein oder reservieren Sie einen Platz.";
+              "Ein oder mehrere Plätze sind noch verfügbar!";
           } else {
             position =
-              "geschlossen! Bitte warten Sie, bis ein Platz verfügbar ist.";
+              "Leider sind derzeit alle Plätze besetzt!";
           }
           if (nr === 0) {
             this.position = position;
@@ -135,6 +135,9 @@ var app = new Vue({
   },
 });
 
+const xlabels = [];
+const ycounts = [];
+
 const ctx = document.getElementById("myChart").getContext("2d");
 const chart = new Chart(ctx, {
   // The type of chart we want to create
@@ -142,13 +145,13 @@ const chart = new Chart(ctx, {
 
   // The data for our dataset
   data: {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: xlabels,
     datasets: [
       {
-        label: "Anzahl Personen im Raum",
+        label: "Durchschn. tägliche Anzahl Personen im Raum pro Monat",
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
-        data: [35, 10, 5, 10, 20, 30, 45],
+        data: ycounts,
       },
     ],
   },
@@ -160,6 +163,7 @@ const chart = new Chart(ctx, {
         {
           ticks: {
             beginAtZero: true,
+            suggestedMax: 10,
           },
         },
       ],
