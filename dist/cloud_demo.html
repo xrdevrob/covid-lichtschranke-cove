@@ -80,7 +80,7 @@
                   class="btn btn-dark"
                   v-on:click="getPosition(0)"
                 >
-                  Jetzt abfragen
+                  Verfügbarkeit abrufen
                 </button>
               </div>
             </div>
@@ -105,31 +105,44 @@
           <div class="col-sm-4">
             <div class="card text-white bg-success">
               <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
+                <h5 class="card-title">Raum reservieren für Demo:</h5>
                 <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
+                  Geben Sie die Sekunden an, für wie lange Sie den Raum
+                  reservieren möchten.
                 </p>
-                <a href="#" class="btn btn-dark">Go somewhere</a>
+                <button
+                  href="#"
+                  class="btn btn-dark"
+                  v-on:click="raumReservieren(0)"
+                >
+                  Raum reservieren
+                </button>
               </div>
             </div>
           </div>
         </div>
-
-        <h4>Events</h4>
-        <!-- Room limit reached -->
-        <p>Raum besetzt: {{ buttonsSync }}</p>
-        <!-- Demo (Reservation) -->
-        <p>Demo aktiv: {{ reservation }}</p>
-
-        <h4>Funktionen</h4>
-        <!-- Call functions example  -->
-        <p>Raum reservieren</p>
-        <button v-on:click="raumReservieren(0)">Raum reservieren</button>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card border-dark">
+              <div class="card-body text-dark">
+                <h5 class="card-title">Raum Besetzung</h5>
+                <p class="card-text">Raum besetzt: {{ buttonsSync }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card border-dark">
+              <div class="card-body text-dark">
+                <h5 class="card-title">Demo aktiv</h5>
+                <p class="card-text">Demo aktiv: {{ reservation }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="container-fluid">
-      <canvas id="myChart"></canvas>
+      <div class="container-fluid">
+        <canvas id="myChart"></canvas>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
