@@ -1,7 +1,4 @@
-// remember how many times the buttons were pressed
-var counter = 0;
-
-// react on the "blinkingStateChanged" Event
+// react on the "handleReservationChanged" Event
 function handleReservationChanged (event) {
     // read variables from the event
     let ev = JSON.parse(event.data);

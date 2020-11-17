@@ -116,11 +116,9 @@ var app = new Vue({
           // Handle the response from the server
           var position = response.data.result;
           if (position == 90) {
-            position =
-              "Ein oder mehrere Plätze sind noch verfügbar!";
+            position = "Ein oder mehrere Plätze sind noch verfügbar!";
           } else {
-            position =
-              "Leider sind derzeit alle Plätze besetzt!";
+            position = "Leider sind derzeit alle Plätze besetzt!";
           }
           if (nr === 0) {
             this.position = position;
