@@ -135,8 +135,8 @@ var app = new Vue({
   },
 });
 
-var ctx = document.getElementById("myChart").getContext("2d");
-var chart = new Chart(ctx, {
+const ctx = document.getElementById("myChart").getContext("2d");
+const chart = new Chart(ctx, {
   // The type of chart we want to create
   type: "line",
 
@@ -145,14 +145,24 @@ var chart = new Chart(ctx, {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
       {
-        label: "My First dataset",
+        label: "Anzahl Personen im Raum",
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
-        data: [0, 10, 5, 2, 20, 30, 45],
+        data: [35, 10, 5, 10, 20, 30, 45],
       },
     ],
   },
 
-  // Configuration options go here
-  options: {},
+  // Configuration options
+  options: {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+          },
+        },
+      ],
+    },
+  },
 });
