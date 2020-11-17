@@ -66,6 +66,26 @@ var app = new Vue({
           );
         });
     },
+    // call the function "displayChange" in your backend
+    displayChange: function (nr) {
+      var duration = 20; // reservation duration in seconds
+      axios
+        .post(rootUrl + "/api/device/" + nr + "/function/displayChange", {
+          arg: duration,
+        })
+        .then((response) => {
+          // Handle the response from the server
+          console.log(response.data); // we could to something meaningful with the return value here ...
+        })
+        .catch((error) => {
+          alert(
+            "Could not call the function 'raumReservieren' of device number " +
+              nr +
+              ".\n\n" +
+              error
+          );
+        });
+    },
     // get the value of the variable "counter"
     getCounter: function (nr) {
       axios
@@ -95,18 +115,20 @@ var app = new Vue({
         .then((response) => {
           // Handle the response from the server
           var position = response.data.result;
+          if (position = 90) {
+            position = "geöffnet! Bitte treten Sie ein oder reservieren Sie einen Platz.";
+          } else {
+            position = "geschlossen! Bitte warten Sie, bis ein Platz verfügbar ist.";
+          }
           if (nr === 0) {
             this.position = position;
           } else {
-            console.log("unknown device number: " + nr);
+            console.log("unknown device");
           }
         })
         .catch((error) => {
           alert(
-            "Could not read the button state of device number " +
-              nr +
-              ".\n\n" +
-              error
+            "Could not read the button state of device number"
           );
         });
     },
