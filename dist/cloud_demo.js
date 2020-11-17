@@ -115,7 +115,7 @@ var app = new Vue({
         .then((response) => {
           // Handle the response from the server
           var position = response.data.result;
-          if (position = 90) {
+          if (position == 90) {
             position = "geöffnet! Bitte treten Sie ein oder reservieren Sie einen Platz.";
           } else {
             position = "geschlossen! Bitte warten Sie, bis ein Platz verfügbar ist.";
@@ -133,4 +133,24 @@ var app = new Vue({
         });
     },
   },
+});
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
 });
