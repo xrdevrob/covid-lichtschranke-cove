@@ -116,9 +116,11 @@ var app = new Vue({
           // Handle the response from the server
           var position = response.data.result;
           if (position == 90) {
-            position = "geöffnet! Bitte treten Sie ein oder reservieren Sie einen Platz.";
+            position =
+              "geöffnet! Bitte treten Sie ein oder reservieren Sie einen Platz.";
           } else {
-            position = "geschlossen! Bitte warten Sie, bis ein Platz verfügbar ist.";
+            position =
+              "geschlossen! Bitte warten Sie, bis ein Platz verfügbar ist.";
           }
           if (nr === 0) {
             this.position = position;
@@ -127,30 +129,30 @@ var app = new Vue({
           }
         })
         .catch((error) => {
-          alert(
-            "Could not read the button state of device number"
-          );
+          alert("Could not read the button state of device number");
         });
     },
   },
 });
 
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById("myChart").getContext("2d");
 var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
+  // The type of chart we want to create
+  type: "line",
 
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
+  // The data for our dataset
+  data: {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "My First dataset",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+        data: [0, 10, 5, 2, 20, 30, 45],
+      },
+    ],
+  },
 
-    // Configuration options go here
-    options: {}
+  // Configuration options go here
+  options: {},
 });
