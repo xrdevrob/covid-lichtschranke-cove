@@ -67,18 +67,17 @@
         </ul>
       </div>
     </nav>
-
     <div class="container-fluid">
       <div id="app">
         <div class="row">
           <div class="col-sm-4">
-            <div class="card">
+            <div class="card text-white bg-info">
               <div class="card-body">
                 <h5 class="card-title">Verfügbarkeit abfragen:</h5>
                 <p class="card-text">{{ position }}</p>
                 <button
                   href="#"
-                  class="btn btn-primary"
+                  class="btn btn-dark"
                   v-on:click="getPosition(0)"
                 >
                   Jetzt abfragen
@@ -87,7 +86,7 @@
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="card">
+            <div class="card bg-light">
               <div class="card-body">
                 <h5 class="card-title">Anzahl Benutzer abfragen:</h5>
                 <p class="card-text">
@@ -95,7 +94,7 @@
                 </p>
                 <button
                   href="#"
-                  class="btn btn-primary"
+                  class="btn btn-dark"
                   v-on:click="getCounter(0)"
                 >
                   Anzahl abrufen
@@ -104,14 +103,14 @@
             </div>
           </div>
           <div class="col-sm-4">
-            <div class="card">
+            <div class="card text-white bg-success">
               <div class="card-body">
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-dark">Go somewhere</a>
               </div>
             </div>
           </div>
@@ -120,7 +119,6 @@
         <h4>Events</h4>
         <!-- Room limit reached -->
         <p>Raum besetzt: {{ buttonsSync }}</p>
-
         <!-- Demo (Reservation) -->
         <p>Demo aktiv: {{ reservation }}</p>
 
