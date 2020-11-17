@@ -1,11 +1,5 @@
-// remember the last event so that we can check if two buttons were pressed within 1 second
-var lastButtonPressEvent = {
-    deviceId: "",
-    timestamp: 0
-}
-
 // remember how many times the buttons were pressed
-var buttonPressCounter = 0;
+var counter = 0;
 
 // react on the "blinkingStateChanged" Event
 function handleReservationChanged (event) {

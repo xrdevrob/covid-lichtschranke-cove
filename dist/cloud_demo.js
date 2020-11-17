@@ -28,23 +28,16 @@ var app = new Vue({
     },
     // react on events: update the variables to be displayed
     updateVariables(ev) {
-      // Event "buttonStateChanged"
-      if (ev.eventName === "buttonStateChanged") {
-        this.buttonPressCounter = ev.eventData.counter;
-        if (ev.eventData.message === "pressed") {
-          this.buttonsSync = ev.eventData.pressedSync;
-        }
-      }
       // Event "reservationChanged"
-      else if (ev.eventName === "reservationChanged") {
-        if (ev.eventData.message === "Reservation aktiv") {
+      if (ev.eventName === "reservationChanged") {
+        if (ev.eventData.message === "Demo aktiv") {
           if (ev.deviceNumber === 0) {
             this.reservation = true;
           } else if (ev.deviceNumber === 1) {
             this.reservation = true;
           }
         }
-        if (ev.eventData.message === "Reservation abgelaufen") {
+        if (ev.eventData.message === "Demo abgeschlossen") {
           if (ev.deviceNumber === 0) {
             this.reservation = false;
           } else if (ev.deviceNumber === 1) {
@@ -55,7 +48,7 @@ var app = new Vue({
     },
     // call the function "raumReservieren" in your backend
     raumReservieren: function (nr) {
-      var duration = 2000; // reservation duration in milliseconds
+      var duration = 20; // reservation duration in seconds
       axios
         .post(rootUrl + "/api/device/" + nr + "/function/raumReservieren", {
           arg: duration,
@@ -67,30 +60,6 @@ var app = new Vue({
         .catch((error) => {
           alert(
             "Could not call the function 'raumReservieren' of device number " +
-              nr +
-              ".\n\n" +
-              error
-          );
-        });
-    },
-    // get the value of the variable "buttonState" on the device with number "nr" from your backend
-    getButtonState: function (nr) {
-      axios
-        .get(rootUrl + "/api/device/" + nr + "/variable/buttonState")
-        .then((response) => {
-          // Handle the response from the server
-          var buttonState = response.data.result;
-          if (nr === 0) {
-            this.buttonState_0 = buttonState;
-          } else if (nr === 1) {
-            this.buttonState_1 = buttonState;
-          } else {
-            console.log("unknown device number: " + nr);
-          }
-        })
-        .catch((error) => {
-          alert(
-            "Could not read the button state of device number " +
               nr +
               ".\n\n" +
               error
