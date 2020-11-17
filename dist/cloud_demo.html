@@ -69,22 +69,17 @@
     <div class="container">
       <div id="app">
         <h4>Events</h4>
-        <!-- Sync example -->
-        <p>Buttons pressed within 1 second: {{ buttonsSync }}</p>
+        <!-- Room limit reached -->
+        <p>Raum besetzt: {{ buttonsSync }}</p>
 
-        <!-- Counter example (received as event) -->
-        <p>Button press counter: {{ buttonPressCounter }}</p>
-
-        <!-- Reservation example (received as event) -->
-        <p>Reservations-Status: {{ reservation }}</p>
+        <!-- Demo (Reservation) -->
+        <p>Demo aktiv: {{ reservation }}</p>
 
         <hr />
         <h4>Variablen</h4>
         <!-- Read variables example -->
         <p>Der Raum ist derzeit {{ position }}</p>
-        <button v-on:click="getPosition(0)">
-          Status des Zugangs abfragen
-        </button>
+        <button v-on:click="getPosition(0)">Status des Zugangs abfragen</button>
         <br />
         <p>Anzahl Benutzer aktuell im Raum: {{ counter }}</p>
         <button v-on:click="getCounter(0)">Anzahl abrufen</button>

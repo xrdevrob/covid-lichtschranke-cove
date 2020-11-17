@@ -3,15 +3,10 @@ var rootUrl = window.location.origin; // get the root URL, e.g. https://example.
 var app = new Vue({
   el: "#app",
   data: {
-    buttonState_0: "unknown", // the state of the button on device 0
-    buttonState_1: "unknown", // the state of the button on device 1
-    buttonsSync: false, // true if the buttons were pressed within 1 second
-    blinking_0: false, // true if device 0 is blinking.
-    blinking_1: false, // true if device 0 is blinking.
-    // add your own variables here ...
-    counter: 0,
-    position: 0,
-    reservation: false,
+    counter: 0, // number of people currently in the room
+    position: 0, // position of servo motor, if 90 = open, if 0 = closed
+    reservation: false, // when demo activ = true
+    besetzt: false, // when counter is > 5 = true
   },
   // This function is executed once when the page is loaded.
   mounted: function () {
