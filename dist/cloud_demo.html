@@ -132,38 +132,56 @@
                 >
                   Raum reservieren
                 </button>
-                <input v-model="message" placeholder="Reservationsdauer">
+                <input v-model="message" placeholder="Reservationsdauer" />
               </div>
             </div>
           </div>
         </div>
-      
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <h3>Liniendiagramm der Raumnutzung</h3>
-            <canvas id="myChart"></canvas>
-          </div>
-          <div class="col">
-            <div class="row">
-              <div class="col">
-                <div class="card border-dark">
-                  <div class="card-body text-dark">
-                    <h5 class="card-title">
-                      Sehen Sie sofort, ob eine Demo im Gange ist:
-                    </h5>
-                    <p class="card-text">Demo aktiv: {{ reservation }}</p>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <h3>Liniendiagramm der Raumnutzung</h3>
+              <canvas id="myChart"></canvas>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  <div class="card border-dark">
+                    <div class="card-body text-dark">
+                      <h5 class="card-title">
+                        Sehen Sie sofort, ob eine Demo im Gange ist:
+                      </h5>
+                      <p class="card-text">Demo aktiv: {{ reservation }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
+              <h3>Auswertung der Raumnnutzung</h3>
+              <table class="table table-sm table-hover table-dark" id="myTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Datum</th>
+                    <th scope="col">Event</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>22.11.2020</td>
+                    <td>Person eingegangen</td>
+                  </tr>
+                  <tr>
+                    <td>22.11.2020</td>
+                    <td>Demo aktiv</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" onclick="myFunction()">Neue Zeile</button>
             </div>
-            <h3>Auswertung der Raumnnutzung</h3>
-            <p>Hello</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

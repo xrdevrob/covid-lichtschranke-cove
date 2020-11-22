@@ -29,14 +29,14 @@ var app = new Vue({
     // react on events: update the variables to be displayed
     updateVariables(ev) {
       if (ev.eventName === "reservationChanged") {
-          if (ev.eventData.message === "Demo aktiv") {
-              this.reservation = true;
-          }
-          if (ev.eventData.message === "Demo abgeschlossen") {
-              this.reservation = false;
-          }
+        if (ev.eventData.message === "Demo aktiv") {
+          this.reservation = true;
+        }
+        if (ev.eventData.message === "Demo abgeschlossen") {
+          this.reservation = false;
+        }
       }
-  },
+    },
     // call the function "raumReservieren" in your backend
     raumReservieren: function (nr) {
       var duration = 5; // reservation duration in seconds
@@ -165,3 +165,12 @@ const chart = new Chart(ctx, {
     },
   },
 });
+
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "Datum des Events";
+  cell2.innerHTML = "Name des Events";
+}
