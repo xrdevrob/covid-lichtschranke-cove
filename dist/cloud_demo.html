@@ -69,9 +69,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/index.html">Startseite</a></li>
         <li class="breadcrumb-item"><a href="#">Demo</a></li>
-        <li class="breadcrumb-item active" aria-current="page">
-          Particle App
-        </li>
+        <li class="breadcrumb-item active" aria-current="page">Particle App</li>
       </ol>
     </nav>
     <div class="container-fluid">
@@ -82,7 +80,8 @@
               <div class="card-body">
                 <h5 class="card-title">Verfügbarkeit abfragen:</h5>
                 <p class="card-text">
-                  Bitte prüfen Sie, ob der Raum geöffnet ist, bevor Sie sich auf den Weg begeben.
+                  Bitte prüfen Sie, ob der Raum geöffnet ist, bevor Sie sich auf
+                  den Weg begeben.
                 </p>
                 <p class="card-text">{{ position }}</p>
                 <button
@@ -137,25 +136,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card border-dark">
-              <div class="card-body text-dark">
-                <h5 class="card-title">Sehen Sie sofort, ob der Raum besetzt ist:</h5>
-                <p class="card-text">Raum besetzt: {{ besetzt }}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card border-dark">
-              <div class="card-body text-dark">
-                <h5 class="card-title">Sehen Sie sofort, ob eine Demo im Gange ist:</h5>
-                <p class="card-text">Demo aktiv: {{ reservation }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
       <div class="container-fluid">
         <div class="row">
           <div class="col">
@@ -163,11 +144,24 @@
             <canvas id="myChart"></canvas>
           </div>
           <div class="col">
+            <div class="row">
+              <div class="col">
+                <div class="card border-dark">
+                  <div class="card-body text-dark">
+                    <h5 class="card-title">
+                      Sehen Sie sofort, ob eine Demo im Gange ist:
+                    </h5>
+                    <p class="card-text">Demo aktiv: {{ reservation }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <h3>Auswertung der Raumnnutzung</h3>
           </div>
         </div>
       </div>
     </div>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

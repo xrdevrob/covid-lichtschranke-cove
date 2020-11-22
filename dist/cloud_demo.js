@@ -28,36 +28,18 @@ var app = new Vue({
     },
     // react on events: update the variables to be displayed
     updateVariables(ev) {
-      // Event "reservationChanged"
-      if (ev.eventName === "buttonStateChanged") {
-          this.buttonPressCounter = ev.eventData.counter;
-          if (ev.eventData.message === "pressed") {
-              this.buttonsSync = ev.eventData.pressedSync;
-          }
-      }
-      // Event "blinkingStateChanged"
-      else if (ev.eventName === "reservationChanged") {
+      if (ev.eventName === "reservationChanged") {
           if (ev.eventData.message === "Demo aktiv") {
-              if (ev.deviceNumber === 0) {
-                  this.reservation = true;
-              }
-              else if (ev.deviceNumber === 1) {
-                  this.blinking_1 = true;
-              }
+              this.reservation = true;
           }
           if (ev.eventData.message === "Demo abgeschlossen") {
-              if (ev.deviceNumber === 0) {
-                  this.reservation = false;
-              }
-              else if (ev.deviceNumber === 1) {
-                  this.blinking_1 = false;
-              }
+              this.reservation = false;
           }
       }
   },
     // call the function "raumReservieren" in your backend
     raumReservieren: function (nr) {
-      var duration = 20; // reservation duration in seconds
+      var duration = 5; // reservation duration in seconds
       axios
         .post(rootUrl + "/api/device/" + nr + "/function/raumReservieren", {
           arg: duration,
@@ -142,6 +124,7 @@ var app = new Vue({
   },
 });
 
+// Chart.js push Label and Data from Argon to Chart
 const xlabels = [];
 const ycounts = [];
 
