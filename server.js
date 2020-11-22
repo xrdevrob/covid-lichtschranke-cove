@@ -91,7 +91,7 @@ app.get('/api/device/:id/variable/:name', (req, res) => {
 })
 
 // Call a function. Example:
-// POST /api/device/0/function/blinkRed
+// POST /api/device/0/function/raumReservieren
 app.post('/api/device/:id/function/:name', (req, res) => {
 
     let id = req.params.id;

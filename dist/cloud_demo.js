@@ -124,6 +124,11 @@ var app = new Vue({
   },
 });
 
+// get Event data from "motionDetected"
+
+// ycounts: "Person eingegangen" wird als +1 eine Person gezählt, bei "Person ausgegangen" passiert nicht
+// xlabels: Das Datum der Event, Events am gleichen Datum sollen zusammengezählt werden
+
 // Chart.js push Label and Data from Argon to Chart
 const xlabels = [];
 const ycounts = [];
@@ -153,10 +158,11 @@ const chart = new Chart(ctx, {
         {
           ticks: {
             beginAtZero: true,
-            suggestedMax: 10,
+            suggestedMax: 15,
           },
         },
       ],
     },
   },
 });
+
