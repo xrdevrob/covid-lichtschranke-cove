@@ -58,7 +58,7 @@ for (let device of devices) {
     /////////////////////////////////////////////////////////
     // Add your event listeners here.
     source.addEventListener('motionDetected', eventListeners.handleMotionDetected)
-    source.addEventListener('reservationChanged', eventListeners.handlereservationChanged)
+    source.addEventListener('reservationChanged', eventListeners.handleReservationChanged)
     // You don't have to change anything else in this file.
     /////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////

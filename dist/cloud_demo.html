@@ -81,6 +81,9 @@
             <div class="card text-white bg-info">
               <div class="card-body">
                 <h5 class="card-title">Verfügbarkeit abfragen:</h5>
+                <p class="card-text">
+                  Bitte prüfen Sie, ob der Raum geöffnet ist, bevor Sie sich auf den Weg begeben.
+                </p>
                 <p class="card-text">{{ position }}</p>
                 <button
                   href="#"
@@ -95,9 +98,12 @@
           <div class="col-sm-4">
             <div class="card bg-light">
               <div class="card-body">
-                <h5 class="card-title">Anzahl Benutzer abfragen:</h5>
+                <h5 class="card-title">Anzahl freie Plätze abfragen:</h5>
                 <p class="card-text">
-                  Anzahl Benutzer aktuell im Raum: {{ counter }}
+                  Planen Sie mehrere Arbeitsplätze zu benutzen?
+                </p>
+                <p class="card-text">
+                  Anzahl freie Plätze im Raum: {{ 6 - counter }}
                 </p>
                 <button
                   href="#"
@@ -113,6 +119,9 @@
             <div class="card text-white bg-success">
               <div class="card-body">
                 <h5 class="card-title">Raum reservieren für Demo:</h5>
+                <p class="card-text">
+                  Sperren Sie den Raum kurzzeitig für eine Demo oder sonstiges.
+                </p>
                 <p class="card-text">
                   Geben Sie die Sekunden an, für wie lange Sie den Raum
                   reservieren möchten.
