@@ -165,4 +165,3 @@ const chart = new Chart(ctx, {
     },
   },
 });
-
