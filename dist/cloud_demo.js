@@ -58,7 +58,7 @@ var app = new Vue({
           );
         });
     },
-    // call the function "displayChange" in your backend
+    // call the function "displayChange" in your backend - diese Funktion ist noch nicht implementiert
     displayChange: function (nr) {
       var duration = 20; // reservation duration in seconds
       axios
@@ -127,8 +127,8 @@ var app = new Vue({
 
 // get Event data from "motionDetected"
 
-// ycounts: "Person eingegangen" wird als +1 eine Person gezählt, bei "Person ausgegangen" passiert nicht
-// xlabels: Das Datum der Event, Events am gleichen Datum sollen zusammengezählt werden
+// ycounts: "Person eingegangen" wird als +1 eine Person gezählt, bei "Person ausgegangen" passiert nichts
+// xlabels: Das Datum der Events. Events am gleichen Datum sollen zusammengezählt werden
 
 // Chart.js push Label and Data from Argon to Chart
 var xlabels = [];
@@ -169,6 +169,7 @@ const chart = new Chart(ctx, {
   },
 });
 
+// Tabelle (gehört nicht zu Chart.js)
 function myFunction() {
   var table = document.getElementById("myTable");
   var row = table.insertRow(1);
