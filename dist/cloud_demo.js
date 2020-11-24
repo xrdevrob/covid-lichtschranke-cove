@@ -7,6 +7,7 @@ var app = new Vue({
     position: 0, // position of servo motor, if 90 = open, if 0 = closed
     reservation: false, // when demo activ = true
     besetzt: false, // when counter is > 5 = true
+    message: "",
   },
   // This function is executed once when the page is loaded.
   mounted: function () {
@@ -39,7 +40,7 @@ var app = new Vue({
     },
     // call the function "raumReservieren" in your backend
     raumReservieren: function (nr) {
-      var duration = 5; // reservation duration in seconds
+      var duration = this.message;//5; // reservation duration in seconds
       axios
         .post(rootUrl + "/api/device/" + nr + "/function/raumReservieren", {
           arg: duration,
@@ -130,8 +131,10 @@ var app = new Vue({
 // xlabels: Das Datum der Event, Events am gleichen Datum sollen zusammengezählt werden
 
 // Chart.js push Label and Data from Argon to Chart
-const xlabels = [];
-const ycounts = [];
+var xlabels = [];
+var ycounts = [];
+
+chart.update();
 
 const ctx = document.getElementById("myChart").getContext("2d");
 const chart = new Chart(ctx, {
