@@ -40,7 +40,7 @@ var app = new Vue({
     },
     // call the function "raumReservieren" in your backend
     raumReservieren: function (nr) {
-      var duration = this.message;//5; // reservation duration in seconds
+      var duration = this.message; // reservation duration in seconds
       axios
         .post(rootUrl + "/api/device/" + nr + "/function/raumReservieren", {
           arg: duration,
