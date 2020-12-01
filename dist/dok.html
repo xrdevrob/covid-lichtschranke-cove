@@ -305,11 +305,13 @@
                   Anzahl Personen laufend auf dem OLED-Display aktualisiert.
                 </p>
                 <h3>2.4 Verkabelung</h3>
-                <img
-                  src="images/verkabelung.JPG"
-                  class="rounded mx-auto d-block"
-                  alt="Verkabelung"
-                />
+                <p>
+                  <img
+                    src="images/verkabelung.JPG"
+                    class="rounded mx-auto d-block"
+                    alt="Verkabelung"
+                  />
+                </p>
                 <h3>2.5 Sammlung und Auswertung der Messdaten</h3>
                 <p>
                   Die Ein- und Ausgangsdaten werden, wie unter 2.3 beschrieben,
@@ -382,13 +384,50 @@
                   Prototypen tatsächlich vor Ort im MR Lab zu testen.
                   Nachfolgend wird ein hypothetisches Szenario beschrieben, wie
                   dieser Prototyp eingesetzt werden könnte. Zum Test dieser
-                  Anwendung wurde eine Vorrichtung aus Karton gebastelt.
+                  Anwendung wurde eine Vorrichtung aus Karton gebastelt. Eine
+                  Demonstration des Tests kann auf der
+                  <a href="http://localhost:3001/index.html">Startseite</a> des
+                  Frontend gefunden werden.
                 </p>
-                <h3>5.1 Erarbeiten eines Testkonzepts</h3>
-                <p>Text</p>
-                <h3>5.2 Tests durchführen</h3>
-                <p>Text</p>
-                <h3>5.3 Testergebnisse auswerten und dokumentieren</h3>
+                <h3>
+                  5.1 Erarbeiten eines Testkonzepts und Durchführung der Tests
+                </h3>
+                <p>
+                  Der Test dieser Anwendung ist im Grunde genommen sehr simpel.
+                  Die beiden IR Break Beam Sensoren werden an der Türe
+                  befestigt. Sensor 1 wird dabei einige Zentimeter vor Sensor 2
+                  platziert. Somit kann erkannt werden, welcher Sensor zuerst
+                  durchtrennt wurde. Wurde zuerst Sensor 1 durchtrennt und dann
+                  Sensor 2 hat eine Person den Raum betreten. Wird Sensor 2 und
+                  dann Sensor 1 durchtrennt hat eine Person den Raum verlassen.
+                </p>
+                <p>
+                  Der Knopf sollte sich am Platz des Dozenten befinden. Wenn
+                  dieser gedrückt wird sollte sich die Schranke schliessen und
+                  somit der Zutritt zum Lab unterbrochen werden.
+                </p>
+                <p>
+                  Vor der Türe zum Zimmer SW329 sollte das OLED-Display
+                  angebracht werden, welches ständig den Zustand des Raumes und
+                  die Anzahl an freien Arbeitsplätzen anzeigt.
+                </p>
+                <p>
+                  Wenn der Counter die Zahl 5 übersteigt muss sich die Schranke
+                  schliessen und sofort wieder öffnen sobald die Zahl 5 oder
+                  tiefer erreicht wird.
+                </p>
+                <p>
+                  Untenstehende Abbildung zeigt die Vorrichtung, welche zu
+                  Testzwecken entworfen wurde.
+                </p>
+                <p>
+                  <img
+                    src="images/verkabelung.JPG"
+                    class="rounded mx-auto d-block"
+                    alt="Verkabelung"
+                  />
+                </p>
+                <h3>5.2 Testergebnisse auswerten und dokumentieren</h3>
                 <p>Text</p>
               </article>
             </section>
@@ -399,24 +438,31 @@
                 <p>Text</p>
                 <h3>6.1 Learnings</h3>
                 <p>
-                  Der Setup des OLED-Displays bereitete mir zu Beginn grosse
+                  Das Setup des OLED-Displays bereitete mir zu Beginn grosse
                   Probleme, da der Vorgang nicht gleich wie beim Arduino ist und
                   es zu Particle-Geräten nur wenige Ressourcen gibt. Ich habe
                   jedoch ein paar wenige, sehr hilfreiche Ressourcen gefunden,
                   welche ich hier teilen möchte. Eine gute Erklärung bietet
-                  Particle selbst
-                  (https://docs.particle.io/tutorials/learn-more/about-i2c/).
-                  Hierbei ist jedoch nicht genau ersichtlich wie man nur das
-                  Display einbindet und in Gang bringt. Es muss also erst viel
-                  herumexperimentiert werden. Eine sehr gute Erklärung bietet
-                  «rickkas7» auf Github, mit Beispiel-Dateien
-                  (https://github.com/rickkas7/SSD1306-tutorial/blob/master/firmware/Logo_128x64_I2C/src/Logo.cpp)
-                  und sogar einem Display-Generator
-                  (https://rickkas7.github.io/DisplayGenerator/). Dieser
-                  Display-Generator ermöglicht einem den exakten Code, welchen
-                  man in seine Anwendung setzen will, zu generieren, inklusive
-                  Bitmaps für die Icons. Diese Ressourcen haben für mich
-                  funktioniert und waren sehr einfach einzubinden.
+                  <a
+                    href="https://docs.particle.io/tutorials/learn-more/about-i2c/"
+                    >Particle</a
+                  >
+                  selbst. Hierbei ist jedoch nicht genau ersichtlich wie man nur
+                  das Display einbindet und in Gang bringt. Es muss also erst
+                  viel herumexperimentiert werden. Eine sehr gute Erklärung
+                  bietet «rickkas7» auf Github, mit
+                  <a
+                    href="https://github.com/rickkas7/SSD1306-tutorial/blob/master/firmware/Logo_128x64_I2C/src/Logo.cpp"
+                    >Beispiel-Dateien</a
+                  >
+                  und sogar einem
+                  <a href="https://rickkas7.github.io/DisplayGenerator/"
+                    >Display-Generator</a
+                  >
+                  . Dieser Display-Generator ermöglicht einem den exakten Code,
+                  welchen man in seine Anwendung setzen will, zu generieren,
+                  inklusive Bitmaps für die Icons. Diese Ressourcen haben für
+                  mich funktioniert und waren sehr einfach einzubinden.
                 </p>
                 <h3>6.2 Ausblick</h3>
                 <p>Text</p>
