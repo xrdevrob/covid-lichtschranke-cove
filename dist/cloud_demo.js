@@ -5,9 +5,9 @@ var app = new Vue({
   data: {
     counter: 0, // number of people currently in the room
     position: 0, // position of servo motor, if 90 = open, if 0 = closed
-    reservation: false, // when demo activ = true
+    reservation: "", // when demo activ = true
     besetzt: false, // when counter is > 5 = true
-    message: "",
+    duration: "",
   },
   // This function is executed once when the page is loaded.
   mounted: function () {
@@ -31,16 +31,16 @@ var app = new Vue({
     updateVariables(ev) {
       if (ev.eventName === "reservationChanged") {
         if (ev.eventData.message === "Demo aktiv") {
-          this.reservation = true;
+          this.reservation = "Demo ist aktiv!";
         }
         if (ev.eventData.message === "Demo abgeschlossen") {
-          this.reservation = false;
+          this.reservation = "Demo abgeschlossen!";
         }
       }
     },
     // call the function "raumReservieren" in your backend
     raumReservieren: function (nr) {
-      var duration = this.message; // reservation duration in seconds
+      var duration = this.duration; // reservation duration in seconds
       axios
         .post(rootUrl + "/api/device/" + nr + "/function/raumReservieren", {
           arg: duration,
@@ -134,8 +134,6 @@ var app = new Vue({
 var xlabels = [];
 var ycounts = [];
 
-chart.update();
-
 const ctx = document.getElementById("myChart").getContext("2d");
 const chart = new Chart(ctx, {
   // The type of chart we want to create
@@ -168,13 +166,3 @@ const chart = new Chart(ctx, {
     },
   },
 });
-
-// Tabelle (gehört nicht zu Chart.js)
-function myFunction() {
-  var table = document.getElementById("myTable");
-  var row = table.insertRow(1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  cell1.innerHTML = "Datum des Events";
-  cell2.innerHTML = "Name des Events";
-}

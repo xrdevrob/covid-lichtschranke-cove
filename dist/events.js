@@ -1,6 +1,6 @@
 
 var app = new Vue({
-    el: "#app",
+    el: "#events",
     data: {
         messages: [],
         lastMessage: ""

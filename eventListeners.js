@@ -5,6 +5,8 @@ function handleReservationChanged (event) {
     let evData = ev.data; // the data from the argon event: "Demo aktiv" or "Demo abgeschlossen"
     let evDeviceId = ev.coreid; // the device id
     let evTimestamp = Date.parse(ev.published_at); // the timestamp of the event
+    let date = new Date(evTimestamp);
+    let datum = date.toLocaleDateString();
 
     // the data we want to send to the clients
     let data = {
@@ -12,7 +14,7 @@ function handleReservationChanged (event) {
     }
 
     // send data to all connected clients
-    sendData("reservationChanged", data, evDeviceId, evTimestamp );
+    sendData("reservationChanged", data, evDeviceId, datum );
 }
 
 // react on the "motionDetected" Event
@@ -26,7 +28,7 @@ function handleMotionDetected (event) {
     let datum = date.toLocaleDateString();
 
     // create a message to be sent to a client
-    let message = datum + " - " + data;
+    let message = datum + ": " + data;
 
     // send the message to the client (as stream)
     exports.sse.send(message)
