@@ -41,30 +41,25 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link sammlung" href="#Sammlung"
-                  >3. Sammlung und Auswertung von Messdaten</a
-                >
-              </li>
-              <li class="nav-item">
                 <a class="nav-link algorithmus" href="#Algorithmus"
-                  >4. Erarbeitung eines geeigneten Algorithmus</a
+                  >3. Erarbeitung eines geeigneten Algorithmus</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-link implementation" href="#Implementation"
-                  >5. Implementation</a
+                  >4. Implementation</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-link testen" href="#Testen"
-                  >6. Testen der Anwendung</a
+                  >5. Testen der Anwendung</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link fazit" href="#Fazit">7. Fazit</a>
+                <a class="nav-link fazit" href="#Fazit">6. Fazit</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link anhang" href="#Anhang">8. Anhang</a>
+                <a class="nav-link anhang" href="#Anhang">Anhang</a>
               </li>
             </ul>
           </nav>
@@ -309,64 +304,92 @@
                   Raum, was den Counter um 1 verringert. Beides mal wird die
                   Anzahl Personen laufend auf dem OLED-Display aktualisiert.
                 </p>
-                <h3>2.3 Verkabelung</h3>
-                <img src="verkabelung.JPG" alt="Verkabelung" />
-              </article>
-            </section>
-
-            <section class="main-section" id="Sammlung">
-              <header><h2>3. Sammlung und Auswertung von Messdaten</h2></header>
-              <article>
-                <p>Text</p>
+                <h3>2.4 Verkabelung</h3>
+                <img
+                  src="images/verkabelung.JPG"
+                  class="rounded mx-auto d-block"
+                  alt="Verkabelung"
+                />
+                <h3>2.5 Sammlung und Auswertung der Messdaten</h3>
+                <p>
+                  Die Ein- und Ausgangsdaten werden, wie unter 2.3 beschrieben,
+                  durch die zwei IR Break Beam Sensoren gesammelt und in einer
+                  «counter» Variable gespeichert. Tritt jemand in den Raum ein
+                  wird dem Counter 1 hinzugefügt. Beim Austritt einer Person
+                  wird vom Counter 1 subtrahiert.
+                </p>
+                <p>
+                  Erreicht der Counter eine Anzahl von 6, was das Limit des MR
+                  Labs ist, schliesst sich die Schranke automatisch. Die
+                  Schranke öffnet sich wieder sobald ein Wert unter 6 erreicht
+                  wurde.
+                </p>
+                <p>
+                  Auch das OLED-Display reagiert auf die im Counter angegebene
+                  Anzahl Personen. Sobald 6 Personen erreicht werden, hat es im
+                  MR Lab keinen Platz mehr. Das OLED-Display, welches vor dem
+                  Zimmer SW329 angebracht werden soll, signalisiert somit
+                  jederzeit wie viel Freie Plätze es im Raum hat. Dabei wird die
+                  im Counter Anzahl von der Maximalanzahl an Personen abgezogen.
+                </p>
+                <pre>
+                  <code>
+                    display.println(6-counter);</code>
+                  </pre>
+                <p><img src="images/plaetze.JPG" alt="Plaetze" /></p>
+                <p>
+                  Das gleiche Resultat kann erreicht werden durch das Drücken
+                  des Knopfes. Wird der Knopf gehalten schliesst die Schranke
+                  und das OLED-Display zeigt an, dass der Raum voll ist.
+                </p>
               </article>
             </section>
             <section class="main-section" id="Algorithmus">
               <header>
-                <h2>4. Erarbeitung eines geeigneten Algorithmus</h2>
+                <h2>3. Erarbeitung eines geeigneten Algorithmus</h2>
               </header>
               <article>
                 <p>
-                  Untenstehend finden Sie den Code der gesamten Particle-App
+                  Untenstehend finden Sie den gesamten Code der Particle-App:
                 </p>
-                <script src="https://gist.github.com/covierob/af4b931405c3e56b0bf7e15e574e5766.js"></script>
+                <script src="https://gist.github.com/covierob/4e5e1d27d27f45d0f06b6e04deb2d2ac.js"></script>
               </article>
             </section>
-
             <section class="main-section" id="Implementation">
-              <header><h2>5. Implementation</h2></header>
+              <header><h2>4. Implementation</h2></header>
               <article>
                 <p>Text</p>
-                <h3>5.1 Daten aggregieren und analysieren</h3>
+                <h3>4.1 Daten aggregieren und analysieren</h3>
                 <p>Text</p>
-                <h3>5.2 Übermittlung der Daten vom Argon zum Backend</h3>
+                <h3>4.2 Übermittlung der Daten vom Argon zum Backend</h3>
                 <p>Text</p>
-                <h3>5.3 Kommunikation zwischen Frontend und Backend</h3>
+                <h3>4.3 Kommunikation zwischen Frontend und Backend</h3>
                 <p>Text</p>
-                <h3>5.4 Visualisierung der Daten</h3>
+                <h3>4.4 Visualisierung der Daten</h3>
                 <p>Text</p>
               </article>
             </section>
 
             <section class="main-section" id="Testen">
-              <header><h2>6. Testen der Anwendung</h2></header>
+              <header><h2>5. Testen der Anwendung</h2></header>
               <article>
                 <p>Text</p>
-                <h3>6.1 Erarbeiten eines Testkonzepts</h3>
+                <h3>5.1 Erarbeiten eines Testkonzepts</h3>
                 <p>Text</p>
-                <h3>6.2 Tests durchführen</h3>
+                <h3>5.2 Tests durchführen</h3>
                 <p>Text</p>
-                <h3>6.3 Testergebnisse auswerten und dokumentieren</h3>
+                <h3>5.3 Testergebnisse auswerten und dokumentieren</h3>
                 <p>Text</p>
               </article>
             </section>
 
             <section class="main-section" id="Fazit">
-              <header><h2>7. Fazit</h2></header>
+              <header><h2>6. Fazit</h2></header>
               <article>
                 <p>Text</p>
-                <h3>7.1 Learnings</h3>
+                <h3>6.1 Learnings</h3>
                 <p>Text</p>
-                <h3>7.2 Ausblick</h3>
+                <h3>6.2 Ausblick</h3>
                 <p>Text</p>
               </article>
             </section>
