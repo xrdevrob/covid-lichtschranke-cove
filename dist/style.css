@@ -1,7 +1,6 @@
-.header-dark {
+.background {
     background:url('https://media.giphy.com/media/KZFrf9JusXzmpnPsT6/giphy.gif') #444;
     background-size:cover;
-    padding-bottom:80px;
   }
   
   @media (min-width:768px) {
