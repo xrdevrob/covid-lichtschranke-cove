@@ -3,7 +3,7 @@ var app = new Vue({
   data: {
     messages: [],
     lastMessage: "",
-    timestamp: "",
+    timestamps: [],
   },
   mounted: function () {
     this.initSse();
@@ -13,20 +13,15 @@ var app = new Vue({
       if (typeof EventSource !== "undefined") {
         var url = window.location.origin + "/api/events";
         var source = new EventSource(url);
+        var currentDate = new Date();
         source.onmessage = (event) => {
           this.messages.push(event.data);
           this.lastMessage = event.data;
+          this.timestamps = currentDate;
         };
       } else {
         this.message = "Your browser does not support server-sent events.";
       }
-    },
-    getNow: function () {
-      var today = new Date();
-      var date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      var dateTime = date + " " + time;
-      this.timestamp = dateTime;
     },
   },
 });
