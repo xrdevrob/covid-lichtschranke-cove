@@ -2,11 +2,12 @@
   margin-top: 10px;
   margin-left: 20px;
   margin-right: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .card {
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .breadcrumb {
@@ -14,4 +15,12 @@
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 20px;
+}
+
+.table {
+  margin-top: 10px;
+}
+
+.giphy-embed {
+  border-radius: 10px;
 }
