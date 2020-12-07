@@ -125,48 +125,6 @@ var app = new Vue({
   },
 });
 
-// get Event data from "motionDetected"
-
-// ycounts: "Person eingegangen" wird als +1 eine Person gezählt, bei "Person ausgegangen" passiert nichts
-// xlabels: Das Datum der Events. Events am gleichen Datum sollen zusammengezählt werden
-
-// Chart.js push Label and Data from Argon to Chart
-var xlabels = [];
-var ycounts = [];
-
-const ctx = document.getElementById("myChart").getContext("2d");
-const chart = new Chart(ctx, {
-  // The type of chart we want to create
-  type: "line",
-
-  // The data for our dataset
-  data: {
-    labels: xlabels,
-    datasets: [
-      {
-        label: "Durchschn. tägliche Anzahl Personen im Raum pro Monat",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
-        data: ycounts,
-      },
-    ],
-  },
-
-  // Configuration options
-  options: {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-            suggestedMax: 15,
-          },
-        },
-      ],
-    },
-  },
-});
-
 function exportTableToExcel(tableID, filename = "") {
   var downloadLink;
   var dataType = "application/vnd.ms-excel";

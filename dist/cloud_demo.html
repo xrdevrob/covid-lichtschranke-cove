@@ -106,12 +106,10 @@
               <div class="card-body">
                 <h5 class="card-title">Raum reservieren für Demo:</h5>
                 <p class="card-text">
-                  Sperren Sie den Raum kurzzeitig für eine Demo oder sonstiges.
-                </p>
-                <p class="card-text">
                   Geben Sie die Sekunden an, für wie lange Sie den Raum
                   reservieren möchten.
                 </p>
+                <p class="card-text">{{ reservation }}</p>
                 <button
                   href="#"
                   class="btn btn-dark"
@@ -122,21 +120,6 @@
                 <input v-model="duration" placeholder="Reservationsdauer" />
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 col-md-8">
-            <h3>Liniendiagramm der Raumnutzung</h3>
-            <canvas id="myChart"></canvas>
-          </div>
-          <div class="col-6 col-md-4">
-            <div class="card">
-              <div class="card-body">
-                Sehen Sie sofort, ob eine Demo im Gange ist:
-                <p class="card-text">{{ reservation }}</p>
-              </div>
-            </div>
-            <div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/ASd0Ukj0y3qMM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/the-simpsons-hello-hi-ASd0Ukj0y3qMM"></a></p>
           </div>
         </div>
       </div>
