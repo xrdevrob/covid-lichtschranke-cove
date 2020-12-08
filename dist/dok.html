@@ -328,6 +328,11 @@
                   des Knopfes. Wird der Knopf gehalten schliesst die Schranke
                   und das OLED-Display zeigt an, dass der Raum voll ist.
                 </p>
+                <p>
+                  Events werden auf dem Frontend direkt in einer Tabelle
+                  gesammelt und können sogleich exportiert und analysiert
+                  werden.
+                </p>
               </article>
             </section>
             <section class="main-section" id="Algorithmus">
@@ -336,9 +341,71 @@
               </header>
               <article>
                 <p>
-                  Untenstehend finden Sie den gesamten Code der Particle-App:
+                  Untenstehend finden Sie den gesamten Code der Particle-App.
+                  Der Code wurde mithilfe der Particle Web IDE erstellt. Die
+                  wichtigsten Stellen des Codes sind direkt kommentiert:
                 </p>
                 <script src="https://gist.github.com/covierob/4e5e1d27d27f45d0f06b6e04deb2d2ac.js"></script>
+                <p>
+                  Damit das OLED-Display funktioniert muss zunächst die Library
+                  «Adafruit_SSD1306_RK.h» importiert werden. Dies geschieht im
+                  Particle über den «#include»-Befehl.
+                </p>
+                <p>
+                  Danach werden die Variablen (Sensoren) den Pins auf dem Argon
+                  zugeordnet. Als nächstes werden booleans deklariert, mithilfe
+                  derer später überprüft werden kann, ob und welcher IR Break
+                  Beam durchtrennt wurde und somit auf die richtige Methode
+                  geleitet wird. Wird ein IR Sensor durchtrennt wird der bool
+                  «waitToConfirm» auf «true» gesetzt, damit der Algorithmus
+                  weiss, dass darauf gewartet werden muss, bis der zweite Sensor
+                  durchtrennt wurde.
+                </p>
+                <p>
+                  Anschliessend wird die Funktion «raumReservieren» erstellt,
+                  mit welcher später im Frontend die Schranke für die gewünschte
+                  Zeit gesperrt werden kann. Das OLED-Display benötigt eine
+                  «updateDisplay» Funktion, um den neu anzuzeigenden Text zu
+                  laden. Mithilfe von «Adafruit_SSD1306 display…» werden
+                  Dimensionen des OLED-Displays gesetzt. In diesem Falle ist
+                  dies 128x64 Pixel.
+                </p>
+                <p>
+                  In der Setup-Funktion wird zunächst das OLED-Display
+                  aktiviert. Der «pinMode» für den Button, die beiden IR
+                  Sensoren und das LED werden gesetzt. Die Particle Variablen
+                  «counter» und «position» und die Particle Funktion
+                  «raumReservieren» werden erstellt. Schlussendlich wird der
+                  Servomotor auf Pin A1 befestigt.
+                </p>
+                <p>
+                  Zu Beginn wird das OLED-Display auf «Willkommen. Anzahl
+                  Personen: ‘counter’» gestellt. Befinden sich mehr als 5
+                  Personen im Raum, also übersteigt der Counter die Zahl 5, oder
+                  wird der Button gedrückt, schliesst sich die Schranke, indem
+                  die Position auf 0 gesetzt wird und das OLED-Display zeigt den
+                  Text «Raum voll». Solange die Schranke geöffnet ist, also
+                  weder der Knopf gedrückt wird oder der Counter über 5 ist,
+                  wird «Platz frei. Anzahl freie Plätze: ‘counter’» angezeigt.
+                  Gleiches geschieht, wenn die Funktion «raumReservieren»
+                  aufgerufen wird. Die Schranke wird für die angegebene Anzahl
+                  Sekunden geschlossen und auch das OLED-Display regiert erneut
+                  dementsprechend. Die Schranke öffnet sich und das OLED-Display
+                  ändert sich wieder zurück nach Ablauf der Anzahl Sekunden.
+                </p>
+                <p>
+                  In der Loop-Funktion, wenn der IR Sensor A zuerst durchtrennt
+                  wird, wird die SensorID 0 an die Funktion «sensorBreak»
+                  weitergegeben. Diese setzt den LED Pin auf HIGH, setzt den
+                  bool «waitToConfirm» auf «true» und gibt die SensorID 1 an die
+                  Funktion «sensorConfirm» weiter. Wird der 2. Sensor nun
+                  durchtrennt, wird der LED Pin wieder auf LOW, der IR Status
+                  auf «false» und «waitToConfirm» auf «false» gesetzt, der
+                  Counter wird um 1 erhöht und das Event «motionDetected» wird
+                  ausgelöst. In diesem Falle «Person eingegangen», im
+                  umgekehrten Fall «Person ausgegangen» wobei der Counter wieder
+                  um 1 reduziert wird.
+                </p>
               </article>
             </section>
             <section class="main-section" id="Implementation">
@@ -354,9 +421,19 @@
                 <h3>4.2 Übermittlung der Daten vom Argon zum Backend</h3>
                 <p>Text</p>
                 <h3>4.3 Kommunikation zwischen Frontend und Backend</h3>
-                <p>Text</p>
+                <p>
+                  Demo starten indem Anzahl Sekunden angegeben wird.
+                  OLED-Display zeigt an wie viele Sekunden (in realem Umfeld
+                  wären es Minuten oder Stunden) die Demo läuft.
+                </p>
                 <h3>4.4 Visualisierung der Daten</h3>
-                <p>Text</p>
+                <p>
+                  Online soll die Verfügbarkeit abgerufen werden sollen. Ist die
+                  Schranke geöffnet und somit mindestens ein Arbeitsplatz frei,
+                  soll hierbei «Bitte treten Sie ein!» angezeigt werden. Ist der
+                  Raum besetzt wird «Der Raum ist zurzeit leider besetzt!»
+                  angezeigt.
+                </p>
               </article>
             </section>
 
