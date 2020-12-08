@@ -161,3 +161,23 @@ footer p {
   margin-top: 10px;
   border-radius: 20px;
 }
+
+.top-scrollerx {
+  position: fixed;
+  bottom: 100px;
+  right: 10px;
+  font-size: 1em;
+  display: none;
+  z-index: 999;
+  text-align: center;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  line-height: 40px;
+}
+.top-scrollerx:hover {
+  background: rgba(0, 0, 0, 0.6);
+}

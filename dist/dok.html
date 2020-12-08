@@ -417,26 +417,91 @@
                   verwendet.
                 </p>
                 <h3>4.1 Daten aggregieren und analysieren</h3>
-                <p>Text</p>
+                <p>
+                  Der Particle-Algorithmus ermittelt, wann jemand im Raum aus-
+                  oder eingegangen ist und wann eine Demo gestartet oder
+                  gestoppt wurde. Aus- und Eingänge werden wie zuvor erläutert
+                  im Counter gespeichert. Diese Eventdaten werden direkt in eine
+                  Tabelle auf dem Frontend gepusht. Somit können Aus- und
+                  Eingänge sowie Demos direkt eingesehen und ebenfalls
+                  exportiert und analysiert werden. Eine Erweiterung wäre es
+                  diese Tabelle mit Namen zu ergänzen, damit man nachvollziehen
+                  kann, wer wann im MR Lab war. Dafür bräuchte man
+                  beispielsweise RFID-Tags, welche auf die Namen der Personen
+                  registriert sind und beim Aus- und Eintreten gescannt werden.
+                  Dies sprengt jedoch den Rahmen dieses Projekts.
+                </p>
                 <h3>4.2 Übermittlung der Daten vom Argon zum Backend</h3>
-                <p>Text</p>
+                <p>
+                  Die Daten werden mit dem zur Verfügung gestellten Backend-Code
+                  (Eventlisteneer usw.) vom Argon zum Backend übermittelt. Es
+                  werden zwei Events übertragen: «motionDetected», welcher die
+                  Aus- und Eingänge festhält und «reservationChanged», welcher
+                  die Änderung des Demo-Status festhält.
+                </p>
+                <p>
+                  Es wird eine Funktion übertragen, die
+                  «raumReservieren»-Funktion, welche es dem Benutzer ermöglicht
+                  direkt über das Internet das MR Lab für den gewünschten
+                  Zeitraum zu sperren.
+                </p>
+                <p>
+                  Zwei Variablen werden vom Argon an das Backend übertragen. Mit
+                  «counter» kann die verbleibende Anzahl freier Plätze im Raum
+                  berechnet werden. Mit der Variable «position», kann bestimmt
+                  werden, ob der Raum offen oder geschlossen ist.
+                </p>
                 <h3>4.3 Kommunikation zwischen Frontend und Backend</h3>
                 <p>
-                  Demo starten indem Anzahl Sekunden angegeben wird.
-                  OLED-Display zeigt an wie viele Sekunden (in realem Umfeld
-                  wären es Minuten oder Stunden) die Demo läuft.
+                  Auf dem Frontend kann eine Demo gestartet werden, indem die
+                  Anzahl Sekunden, für wie lange man den Raum reservieren
+                  möchte, angegeben wird. Das OLED-Display zeigt an wie viele
+                  Sekunden (in realem Umfeld Minuten oder Stunden) die Demo
+                  läuft.
+                </p>
+                <p>
+                  Ist man beispielsweise im Unterricht irgendwo in Zürich oder
+                  Winterthur und plant anschliessend das MR Lab zu besuchen,
+                  kann man über das Internet die Verfügbarkeit des Raumes sowie
+                  die genaue Anzahl freier Plätze abrufen. Ebenfalls ist sofort
+                  auf einem Blick ersichtlich, ob der Raum für eine Demo
+                  reserviert wurde.
+                </p>
+                <p>
+                  Im Backend finden Sie drei HMTL-Pages. Das wäre die Startseite
+                  (index.html), eine Seite, auf welcher Sie diese Dokumentation
+                  lesen können (dok.html) und eine Seite, auf welcher Sie die
+                  Particle-Demo finden (cloud_demo.js). Alle Seiten sind mittels
+                  Navigationsleiste miteinander verlinkt. Sämtliche HTML-Pages
+                  wurde ebenfalls mit jeweils einem CSS-File gestaltet.
+                </p>
+                <p>
+                  Beide Javascript-Files, cloud_demo.js und event.js wurden
+                  beziehen sich auf cloud_demo.html, da sich alle
+                  Funktionalitäten auf der Demo-Page befinden.
                 </p>
                 <h3>4.4 Visualisierung der Daten</h3>
                 <p>
-                  Online soll die Verfügbarkeit abgerufen werden sollen. Ist die
-                  Schranke geöffnet und somit mindestens ein Arbeitsplatz frei,
-                  soll hierbei «Bitte treten Sie ein!» angezeigt werden. Ist der
-                  Raum besetzt wird «Der Raum ist zurzeit leider besetzt!»
-                  angezeigt.
+                  Im cloud_demo.html finden Sie vier Buttons. Wie schon
+                  angedeutet kann man die Verfügbarkeit des Raumes abrufen, also
+                  ob dieser geschlossen oder geöffnet ist. Ebenfalls kann man
+                  die Anzahl freier Sitzplätze abfragen. Dies überschneidet sich
+                  auf den ersten Blick mit der Verfügbarkeit, jedoch ist diese
+                  Abfrage sehr wichtig, wenn man plant das MR Lab mit mehreren
+                  Personen gleichzeitig zu nutzen. Ausserdem kann man direkt im
+                  Frontend die Anzahl Sekunden eingeben, für welche man den Raum
+                  reservieren oder eine Demo präsentieren möchte. Anschliessend
+                  wird sofort online und auf dem OLED-Display angezeigt, ob und
+                  wie lange eine Demo im Gange ist.
+                </p>
+                <p>
+                  Gleich Darunter werden die Events aufgeführt. Diese werden
+                  direkt in eine Tabelle gepusht, welche anschliessend
+                  exportiert werden kann. Rechts daneben ist stets ersichtlich,
+                  welcher Event zuletzt ausgelöst wurde.
                 </p>
               </article>
             </section>
-
             <section class="main-section" id="Testen">
               <header><h2>5. Testen der Anwendung</h2></header>
               <article>
@@ -569,27 +634,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
-    <style>
-      .top-scrollerx {
-        position: fixed;
-        bottom: 100px;
-        right: 10px;
-        font-size: 1em;
-        display: none;
-        z-index: 999;
-        text-align: center;
-        cursor: pointer;
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        background: rgba(0, 0, 0, 0.35);
-        color: #fff;
-        line-height: 40px;
-      }
-      .top-scrollerx:hover {
-        background: rgba(0, 0, 0, 0.6);
-      }
-    </style>
     <div class="top-scrollerx js-top-scrollerx svg-icons">
       <svg
         style="vertical-align: text-bottom"
