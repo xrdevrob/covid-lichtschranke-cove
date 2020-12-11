@@ -3,7 +3,6 @@ var app = new Vue({
   data: {
     messages: [],
     lastMessage: "",
-    timestamp: "",
   },
   mounted: function () {
     this.initSse();
@@ -14,8 +13,6 @@ var app = new Vue({
         var url = window.location.origin + "/api/events";
         var source = new EventSource(url);
         source.onmessage = (event) => {
-          console.log("Event:" + event.data);
-
           this.messages.push(JSON.parse(event.data));
           this.lastMessage = event.data;
         };

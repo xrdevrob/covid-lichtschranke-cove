@@ -108,7 +108,7 @@
                   Geben Sie die Sekunden an, für wie lange Sie den Raum
                   reservieren möchten.
                 </p>
-                <p class="card-text">{{ reservation }}</p>
+                <p>z.B. "10" = 10 Sekunden | Danach auf dem Button bestätigen</p>
                 <button
                   href="#"
                   class="btn btn-dark"
@@ -144,18 +144,19 @@
                 </thead>
                 <tbody>
                   <tr v-for="message in messages">
-                    <td>{{ message.data }}</td>
-                    <td>{{ message.datum }}</td>
+                    <td>{{ message.Event }}</td>
+                    <td>{{ message.Datum }}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div class="col-6 col-md-4">
-              <div class="card">
+              <div class="card text-white bg-dark">
                 <div class="card-body">
                   <p>Letzter Event: {{ lastMessage }}</p>
                 </div>
               </div>
+                <p><div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/hore0ga0Rn5nlaRrWx" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div></p>
             </div>
           </div>
         </div>

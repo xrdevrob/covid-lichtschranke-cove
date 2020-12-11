@@ -21,21 +21,10 @@ var app = new Vue({
         var url = rootUrl + "/api/events";
         var source = new EventSource(url);
         source.onmessage = (event) => {
-          this.updateVariables(JSON.parse(event.data));
+          this.updateVariables(JSON.parse(event.message));
         };
       } else {
         this.message = "Your browser does not support server-sent events.";
-      }
-    },
-    // react on events: update the variables to be displayed
-    updateVariables(ev) {
-      if (ev.eventName === "reservationChanged") {
-        if (ev.eventData.message === "Demo aktiv") {
-          this.reservation = "Demo ist aktiv!";
-        }
-        if (ev.eventData.message === "Demo abgeschlossen") {
-          this.reservation = "Demo abgeschlossen!";
-        }
       }
     },
     // call the function "raumReservieren" in your backend
