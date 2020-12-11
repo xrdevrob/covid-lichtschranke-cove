@@ -19,3 +19,8 @@
   border-radius: 10px;
   overflow: hidden;
 }
+
+.lmsg {
+  margin-bottom: -5px;
+  margin-top: 10px;
+}
