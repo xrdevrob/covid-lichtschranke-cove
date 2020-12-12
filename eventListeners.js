@@ -6,11 +6,12 @@ function handleReservationChanged (event) {
     let deviceId = eventData.coreid;
     let timestamp = Date.parse(eventData.published_at);
     let date = new Date(timestamp);
-    let datum = date.toLocaleDateString();
+    let options = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    let datum = date.toLocaleDateString('de-DE', options);
 
     // create a message to be sent to a client
     let message = {
-        Datum: date.toLocaleDateString(),
+        Datum: datum,
         Event: data
     }
 
@@ -26,11 +27,12 @@ function handleMotionDetected (event) {
     let deviceId = eventData.coreid;
     let timestamp = Date.parse(eventData.published_at);
     let date = new Date(timestamp);
-    let datum = date.toLocaleDateString();
+    let options = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    let datum = date.toLocaleDateString('de-DE', options);
 
     // create a message to be sent to a client
     let message = {
-        Datum: date.toLocaleDateString(),
+        Datum: datum,
         Event: data
     }
 
