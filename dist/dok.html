@@ -58,9 +58,6 @@
               <li class="nav-item">
                 <a class="nav-link fazit" href="#Fazit">6. Fazit</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link anhang" href="#Anhang">Anhang</a>
-              </li>
             </ul>
           </nav>
         </div>
@@ -504,8 +501,8 @@
                   dieser Prototyp eingesetzt werden könnte. Zum Test dieser
                   Anwendung wurde eine Vorrichtung aus Karton gebastelt. Eine
                   Demonstration des Tests kann in Form eines Videos auf der
-                  <a href="http://localhost:3001/index.html">Startseite</a> des
-                  Frontend gefunden werden.
+                  <a href="/index.html">Startseite</a> des Frontend gefunden
+                  werden.
                 </p>
                 <h3>
                   5.1 Erarbeiten eines Testkonzepts und Durchführung der Tests
@@ -546,7 +543,22 @@
                   />
                 </p>
                 <h3>5.2 Testergebnisse auswerten und dokumentieren</h3>
-                <p>Text</p>
+                <p>
+                  Die Anwendung funktioniert wie gewollt und ohne Probleme. Ein-
+                  und Ausgänge werden konstant korrekt erkannt und vom Counter
+                  ab- oder dazugezählt. Die Verfügbarkeit und die Anzahl freier
+                  Plätze kann stehts problemlos abgefragt werden.
+                </p>
+                <p>
+                  Der Raum kann reserviert werden, bzw. eine Demo kann aktiviert
+                  werden. Die Schranke schliesst und öffnet sich nach der
+                  angegebenen Zeit wieder.
+                </p>
+                <p>
+                  Werden alle freien Plätze besetzt schliesst sich die Schranke
+                  und öffnet sich wieder sobald ein Platz frei wird. Die
+                  Abfragen auf dem Frontend funktionieren ebenfalls wie gewollt.
+                </p>
               </article>
             </section>
 
@@ -582,19 +594,24 @@
                   inklusive Bitmaps für die Icons. Diese Ressourcen haben für
                   mich funktioniert und waren sehr einfach einzubinden.
                 </p>
-                <h3>6.2 Ausblick</h3>
-                <p>Text</p>
-              </article>
-            </section>
-
-            <section class="main-section" id="Anhang">
-              <header><h2>Anhang</h2></header>
-              <article>
-                <p>Text</p>
-                <h3>Frontend und Backend Code</h3>
-                <p>Text</p>
-                <h3>Particle-App</h3>
-                <p>Text</p>
+                <h3>6.2 Ausblick und Verbesserungsmöglichkeiten</h3>
+                <p>
+                  Schlussendlich funktioniert alles wie gewollt, aber es gibt
+                  sicherlich noch Verbesserungspotenzial. Natürlich wäre in
+                  einem echten Szenario der Servomotor nicht stark genug, um
+                  eine Türe zu schliessen. Bessere Auswertungen würde man mit
+                  einem System, welches RFID-Tags benutzt, erhalten, da man hier
+                  die RFID-Nummer und somit die dazugehörige Person erkennen
+                  kann und bei einem Vorfall somit weiss wer genau im Raum war.
+                </p>
+                <p>
+                  Ausserdem hätte mein System wahrscheinlich Schwierigkeiten,
+                  wenn mehrere Personen eng aufeinanderfolgend den Raum
+                  betreten, denn es müssen beide Sensoren zuerst durchtrennt
+                  werden, um einen Ein- oder Austritt zu erkennen. Auch wenn
+                  jemand zuerst den ersten Sensor durchtrennt und sich jedoch
+                  wieder umdreht wird die nächste Person nicht korrekt erkannt.
+                </p>
               </article>
             </section>
           </main>
