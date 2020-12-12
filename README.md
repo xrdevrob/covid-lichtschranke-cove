@@ -15,7 +15,8 @@ Dies ist ein Semesterprojekt im Modul **Internet of Things (2020-HS)** im Studie
    1. Servomotor (Micro Servo WAVGAT SG90) – Schranke
    1. OLED-Display (SSD1306 128x64 I2C) – Informationsanzeige
    1. Zwei Adafruit IR Break Beam Sensoren
-1. Sammlung und Auswertung von Messdaten
+   1. Verkabelung
+   1. Sammlung und Auswertung der Messdaten
 1. Erarbeitung eines geeigneten Algorithmus
 1. Implementation
    1. Daten aggregierten und analysieren
@@ -23,12 +24,11 @@ Dies ist ein Semesterprojekt im Modul **Internet of Things (2020-HS)** im Studie
    1. Kommunikation zwischen Frontend und Backend
    1. Visualisierung der Daten
 1. Testen der Anwendung
-   1. Erarbeiten eines Testkonzepts
-   1. Tests durchführen
+   1. Erarbeiten eines Testkonzepts und Durchführung der Tests
    1. Testergebnisse auswerten und dokumentieren
 1. Fazit
    1. Learnings
-   1. Ausblick
+   1. Ausblick und Verbesserungsmöglichkeiten
 1. Anhang
    1. Github-Repository (Backend/Frontend)
    1. Particle-App
