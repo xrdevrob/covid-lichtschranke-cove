@@ -3,12 +3,6 @@
     background-size:cover;
   }
   
-  @media (min-width:768px) {
-    .header-dark {
-      padding-bottom:343px;
-    }
-  }
-  
   .header-dark .navbar {
     background:transparent;
     padding-top:0;
@@ -164,3 +158,10 @@
     background-color:#666;
   }
   
+  .rounded{
+    margin-top: 20px;
+  }
+
+  .embed-responsive{
+    margin-top: -20px;
+  }
