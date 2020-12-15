@@ -5,9 +5,6 @@ var app = new Vue({
   data: {
     counter: 0, // number of people currently in the room
     position: 0, // position of servo motor, if 90 = open, if 0 = closed
-    reservation: "", // when demo activ = true
-    besetzt: false, // when counter is > 5 = true
-    duration: "",
   },
   // This function is executed once when the page is loaded.
   mounted: function () {
@@ -32,26 +29,6 @@ var app = new Vue({
       var duration = this.duration; // reservation duration in seconds
       axios
         .post(rootUrl + "/api/device/" + nr + "/function/raumReservieren", {
-          arg: duration,
-        })
-        .then((response) => {
-          // Handle the response from the server
-          console.log(response.data); // we could to something meaningful with the return value here ...
-        })
-        .catch((error) => {
-          alert(
-            "Could not call the function 'raumReservieren' of device number " +
-              nr +
-              ".\n\n" +
-              error
-          );
-        });
-    },
-    // call the function "displayChange" in your backend - diese Funktion ist noch nicht implementiert
-    displayChange: function (nr) {
-      var duration = 20; // reservation duration in seconds
-      axios
-        .post(rootUrl + "/api/device/" + nr + "/function/displayChange", {
           arg: duration,
         })
         .then((response) => {
